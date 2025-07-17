@@ -6,10 +6,8 @@ function App() {
   const [card, setCard] = useState([]);
 
   const fetchCards = async () => {
-    // const res = await fetch("http://localhost:3000/card"); //Locally
-    const res = await fetch(
-      "https://metricoid-assesment-backend.onrender.com/card"
-    ); //Hosted on render
+    const res = await fetch("http://localhost:3000/card"); //Locally
+    // const res = await fetch("https://metricoid-assesment-backend.onrender.com/card"); //Hosted on render
     const data = await res.json();
     setCard(data);
     console.log(data);
@@ -20,7 +18,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-4 items-center justify-center h-[90vh] overflow-y-scroll">
+    <div className="flex flex-col gap-4 items-center justify-start min-h-[90vh] pt-10 overflow-y-auto">
       {card.map((card) => (
         <div
           key={card._id}
