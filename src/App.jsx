@@ -17,9 +17,12 @@ function App() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-4 items-center justify-center h-screen overflow-y-scroll">
+    <div className="flex flex-col gap-4 items-center justify-center h-[90vh] overflow-y-scroll">
       {card.map((card) => (
-        <div className="flex flex-col gap-5 w-[450px] min-h-[200px] p-3 bg-white/80 rounded-lg justify-center">
+        <div
+          key={card._id}
+          className="flex flex-col gap-5 w-[450px] min-h-[200px] p-3 bg-white/80 rounded-lg justify-center"
+        >
           <div className="flex gap-2 items-center">
             <img src={profileImage} alt="Profile Image" className="w-12 h-12" />
             <div className="flex justify-between w-full items-center">
