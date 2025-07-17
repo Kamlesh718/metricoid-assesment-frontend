@@ -6,8 +6,10 @@ function App() {
   const [card, setCard] = useState([]);
 
   const fetchCards = async () => {
-    const res = await fetch("http://localhost:3000/card"); //Locally
-    // const res = await fetch("https://metricoid-assesment-backend.onrender.com/card"); //Hosted on render
+    // const res = await fetch("http://localhost:3000/card"); //Locally
+    const res = await fetch(
+      "https://metricoid-assesment-backend.onrender.com/card"
+    ); //Hosted on render
     const data = await res.json();
     setCard(data);
     console.log(data);
